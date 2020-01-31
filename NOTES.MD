@@ -19,3 +19,13 @@
 >> yarn add node-sass
 2. create-react-app comes with SASS configuration.
 3. &:first-child === menu-item:first-child. Shortcuts for nesting.
+
+- Project Files:
+1. package lock files ensure that different machines, etc, have the very same packages.
+2. serviceWorker. Progressive Web apps.
+
+- Project components:
+
+- Homepage and Directory Components:
+1. What's a page component?
+
