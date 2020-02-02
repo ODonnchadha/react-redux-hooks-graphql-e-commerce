@@ -29,3 +29,41 @@
 - Homepage and Directory Components:
 1. What's a page component?
 
+- Routing in a Single Page Application:
+1. So we send files via the server once versus Server-side rendering. 
+    a. Angular is a framework. React does not care.
+2. We will use React Router. Browers are built on clicking a link and receiving a new HTML file.
+    a. The browser provides a history API. So we hijack URLs with the library.
+
+- So what is Routing? Most popular and most supported. Follows component-driven architecture.
+>> yarn add react-router-dom
+```jsx
+    import { BrowserRouter } from 'react-router-dom';
+```
+1. Router receives the following:
+    a. exact: true/false property. Path must be exact.
+    b. path: string eual to the path itself. e.g.: '/' for the root (at the base.)
+    c. component: Rendered component
+```jsx
+    <Route exact path component />
+```
+2. <Switch /> component. Wrap route components within. The moment that there is a match, we render.
+    1. Otherwise, we fall through and can render multiple components.
+
+- React Router Dom
+1. Three props: { history, location, match }
+    a. history. Using the push. Two ways to navigate between pages.
+    b. { Link } component. Dynamically pass in a 'to' property. Modified <a> link.
+    c. Or use the history. OnClick = fn() props.history.push('') with the string.
+    d. location prop. Where we are currently. Focus on the pathname.
+2. Main useage of match. Allows our components to build a nested structure.
+    a. e.g.: to={`${props.match.url}/13`}
+
+- withRouter():
+1. Route passes properties one child deep. 
+2. Here's a bad pattern called prop tunneling (or prop drilling): history={this.props.history}
+    a. Basically, the children inbetween do not need the property.
+3. This is a higher order component. A function that takes any component as an argument and (may) return a modified component.
+```jsx
+    export default withRouter(MenuItem);
+```
