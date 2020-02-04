@@ -67,3 +67,13 @@
 ```jsx
     export default withRouter(MenuItem);
 ```
+
+- Forms in React:
+1. Forms and User Authentication. Register and/or validate existence. So, back to the three points:
+    a. Decide on component state.
+    b. Decide the state and where it lives.
+    c. What changes when state changes.
+2. Creation of custom, reuseable components. Where should state live?
+
+- Form Input
+1. mixin: Substitute entire chunk of css within SASS.
