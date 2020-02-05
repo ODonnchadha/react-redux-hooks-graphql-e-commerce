@@ -76,4 +76,8 @@
 2. Creation of custom, reuseable components. Where should state live?
 
 - Form Input
-1. mixin: Substitute entire chunk of css within SASS.
+1. @mixin: Substitute entire chunk of css within SASS.
+
+- Firebase:
+1. Storage and Authentication via server, database, and authentication. e.g.: shop data.
+2. e-commerce-db. Free plan is enough for us.

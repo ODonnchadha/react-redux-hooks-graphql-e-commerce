@@ -8,17 +8,37 @@ class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            displayName: '',
             email: '',
-            password: ''
+            password: '',
+            confirmPassword: ''
         }
+    }
+
+    onChange = event => {
+        const { value, name } = event.target;
+        this.setState({ [name]: value });
+    }
+
+    onSubmit = event => {
+        event.preventDefault();
+        this.setState({ email: '', password: ''});
     }
 
     render() {
         return (
             <div className='sign-in'>
-                <h2>I already have an account</h2>
-                <span>Sign in with your email and password</span>
+                <h2>I do not have an account</h2>
+                <span>Sign up with your email and password</span>
                 <form>
+                    <FormInput
+                        label='Display Name'
+                        name='displayName' 
+                        type='text' 
+                        value={this.state.displayName} 
+                        required 
+                        onChange={this.onChange}
+                    />
                     <FormInput
                         label='Email'
                         name='email' 
@@ -32,6 +52,14 @@ class SignUp extends React.Component {
                         name='password' 
                         type='password' 
                         value={this.state.password} 
+                        required 
+                        onChange={this.onChange} 
+                    />
+                    <FormInput
+                        label='Confirm Password'
+                        name='confirmPassword'
+                        type='password' 
+                        value={this.state.confirmPassword} 
                         required 
                         onChange={this.onChange} 
                     />

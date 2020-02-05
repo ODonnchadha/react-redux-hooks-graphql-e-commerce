@@ -4,8 +4,10 @@ import SignUp from '../../components/sign-up/sign-up';
 
 const Auth = () => (
     <div className='auth'>
-        <SignIn />
-        <SignUp />
+        <div>
+            <SignIn />
+            <SignUp />
+        </div>
     </div>
 )
 
