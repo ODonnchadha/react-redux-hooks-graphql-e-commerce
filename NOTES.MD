@@ -82,3 +82,7 @@
 1. Storage and Authentication via server, database, and authentication. e.g.: shop data.
 2. e-commerce-db. Free plan is enough for us.
 
+- Sign In With Google
+1. Firebase knows that a user never signed out. Subscriber is always listening, until sign out.
+    a. User persistence.
+2. O-Auth (essentially) allows users to log in with any other third-party service.

@@ -2,7 +2,7 @@ import React from 'react';
 import SignIn from '../../components/sign-in/sign-in';
 import SignUp from '../../components/sign-up/sign-up';
 
-const Auth = () => (
+const Authorization = () => (
     <div className='auth'>
         <div>
             <SignIn />
@@ -11,4 +11,4 @@ const Auth = () => (
     </div>
 )
 
-export default Auth;
+export default Authorization;
