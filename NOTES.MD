@@ -5,18 +5,18 @@
 
 - Github and Project Repositories:
 1. Obtain existing source code and then make it your own.
->> git clone XYZ cloned-repo
->> cd cloned-repo
->> git remote
+### `git clone XYZ cloned-repo`
+### `cd cloned-repo`
+### `git remote`
     origin
->> git remote remove origin
->> git remote add origin YYZ
->> git push origin master
+### `git remote remove origin`
+### `git remote add origin YYZ`
+### `git push origin master`
 
 - E-Commerce Homepage
->> npx create-react-app react-redux-hooks-graphql-e-commerce
+### `npx create-react-app react-redux-hooks-graphql-e-commerce`
 1. We'll use SASS for our styling.
->> yarn add node-sass
+### `yarn add node-sass`
 2. create-react-app comes with SASS configuration.
 3. &:first-child === menu-item:first-child. Shortcuts for nesting.
 
@@ -36,7 +36,7 @@
     a. The browser provides a history API. So we hijack URLs with the library.
 
 - So what is Routing? Most popular and most supported. Follows component-driven architecture.
->> yarn add react-router-dom
+### `yarn add react-router-dom`
 ```jsx
     import { BrowserRouter } from 'react-router-dom';
 ```
@@ -81,3 +81,4 @@
 - Firebase:
 1. Storage and Authentication via server, database, and authentication. e.g.: shop data.
 2. e-commerce-db. Free plan is enough for us.
+
