@@ -33,7 +33,7 @@ class SignIn extends React.Component {
                         label='Email'
                         name='email' 
                         type='email' 
-                        value={this.state.password} 
+                        value={this.state.email} 
                         required 
                         onChange={this.onChange}
                     />

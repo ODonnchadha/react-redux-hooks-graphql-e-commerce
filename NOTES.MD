@@ -87,4 +87,32 @@
     a. User persistence.
 2. O-Auth (essentially) allows users to log in with any other third-party service.
 
-- Sign Out
+- Firebase Firestore: Email and Password.
+1. No SQL database. One giant JSON object.
+2. A collection: A group of objects called documents. They can have properties that point to other collections.
+    a. /users will have a document id. e.g.:
+    b. /users/40/cartItems/50
+```jsx
+    firestore.collection('users').doc('40').collection('cartItems').doc('50');
+    firestore.doc('/users/40/cartItems/50');
+    firestore.collection('/users/40/cartItems');
+```
+- Store authenticated users within our datastore.
+1. A query is a request we make to firestore to provide us something from the database.
+2. Firestore returns us two types of objects: references and snapshots. Of these objects, they can either be document or collection versions.
+3. Firestore will *always* return us these objects, even if nothing exists from that query.
+- DocumentReference versus CollectionReference
+
+1. We use documentRef objects to perform our CRUD methods (create, retrieve, update, delete.) The documentRef methods are .set(), .get(), .update(), and .delete() respectively.
+2. We can also add documents to collections using the collectionRef object with the .add() method.
+    a. e.g.: collectionRef.add( {} );
+3. We get the snapshotObject from the referenceObject using the .get() method.
+    a. e.g.: documentRef.get() or collectionRef.get();
+4. documentRef returns a documentSnapshot object. collectionRef returns a querySnapshot object.
+
+1. We get a documentSnapshot object from our documentReference object.
+2. The documentSnapshot object allows us to check if a document exists at this query using the .exists property which returns a boolean.
+3. We can also get the actual properties on the object by calling the .data() method, which returns to us a JSON object of the document.
+    a. Administration
+    b. admin@react.com
+    c. Admin1234

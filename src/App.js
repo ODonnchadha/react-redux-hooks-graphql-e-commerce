@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import { auth } from './firebase';
+import { auth, createUserProfileDocument } from './firebase';
 import Header from './components/header/header';
 import Authorization from './pages/authorization/authorization';
 import Home from './pages/home/home';
@@ -17,8 +17,22 @@ class App extends React.Component {
   
   unsubscribeFromAuth = null;
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = createUserProfileDocument(userAuth);
+        // Has the snapshot changed?
+        userRef.onSnapshot(snapShot => {
+          this.setState({ 
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            } 
+          });
+        });
+      } else {
+        // Set currentUser to null.
+        this.setState({currentUser: userAuth });
+      }
     });
   }
   componentWillUnmount() {
