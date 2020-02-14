@@ -113,6 +113,6 @@
 1. We get a documentSnapshot object from our documentReference object.
 2. The documentSnapshot object allows us to check if a document exists at this query using the .exists property which returns a boolean.
 3. We can also get the actual properties on the object by calling the .data() method, which returns to us a JSON object of the document.
-    a. Administration
-    b. admin@react.com
-    c. Admin1234
+    a. displayName: Administration
+    b. user: admin@react.com
+    c. password: Admin1234

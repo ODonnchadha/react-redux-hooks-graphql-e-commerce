@@ -21,7 +21,7 @@ class App extends React.Component {
       if (userAuth) {
         const userRef = createUserProfileDocument(userAuth);
         // Has the snapshot changed?
-        userRef.onSnapshot(snapShot => {
+        (await userRef).onSnapshot(snapShot => {
           this.setState({ 
             currentUser: {
               id: snapShot.id,
